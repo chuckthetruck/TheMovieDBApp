@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "MoviesModel.h"
+#import "ViewController.h"
 
 @interface TableViewController ()
 @property (strong,nonatomic) MoviesModel* myMoviesModel;
@@ -53,6 +54,18 @@
     return cell;
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    BOOL isVC = [[segue destinationViewController] isKindOfClass:[ViewController class]];
+    
+    if(isVC){
+        //UITableViewCell* cell = (UITableViewCell*)sender;
+        ViewController *vc = [segue destinationViewController];
+        vc.labelText = @"This is working as intended hopefully this is enough test to force a text wrap. If not rip.";
+    }
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

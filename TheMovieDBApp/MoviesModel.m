@@ -30,7 +30,7 @@
         //changes the string and will save to a class variable for the JSON
         
         NSError *error;
-        NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/discover/movie?api_key=a162de9ef2506e96acd6fe602ba16c43&sort_by=popularity.desc"];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a162de9ef2506e96acd6fe602ba16c43"];
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
         
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];

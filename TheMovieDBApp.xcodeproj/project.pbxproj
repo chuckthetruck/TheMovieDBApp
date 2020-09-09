@@ -15,6 +15,7 @@
 		83118E472506DFC1007D441F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83118E462506DFC1007D441F /* main.m */; };
 		83118E512506DFC1007D441F /* TheMovieDBAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83118E502506DFC1007D441F /* TheMovieDBAppTests.m */; };
 		83118E5C2506DFC1007D441F /* TheMovieDBAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83118E5B2506DFC1007D441F /* TheMovieDBAppUITests.m */; };
+		8314067B25088BC900411A47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8314067A25088BC900411A47 /* ViewController.m */; };
 		831A2EE825083A1000B57154 /* MoviesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 831A2EE725083A1000B57154 /* MoviesModel.m */; };
 		831A2EEB250865C400B57154 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831A2EEA250865C400B57154 /* TableViewController.m */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,8 @@
 		83118E572506DFC1007D441F /* TheMovieDBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83118E5B2506DFC1007D441F /* TheMovieDBAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheMovieDBAppUITests.m; sourceTree = "<group>"; };
 		83118E5D2506DFC1007D441F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8314067925088BC900411A47 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8314067A25088BC900411A47 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		831A2EE625083A1000B57154 /* MoviesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesModel.h; sourceTree = "<group>"; };
 		831A2EE725083A1000B57154 /* MoviesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesModel.m; sourceTree = "<group>"; };
 		831A2EE9250865C400B57154 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				831A2EE625083A1000B57154 /* MoviesModel.h */,
 				831A2EE725083A1000B57154 /* MoviesModel.m */,
 				83118E3D2506DFBF007D441F /* Main.storyboard */,
+				8314067925088BC900411A47 /* ViewController.h */,
+				8314067A25088BC900411A47 /* ViewController.m */,
 				83118E402506DFC1007D441F /* Assets.xcassets */,
 				83118E422506DFC1007D441F /* LaunchScreen.storyboard */,
 				83118E452506DFC1007D441F /* Info.plist */,
@@ -272,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8314067B25088BC900411A47 /* ViewController.m in Sources */,
 				831A2EEB250865C400B57154 /* TableViewController.m in Sources */,
 				831A2EE825083A1000B57154 /* MoviesModel.m in Sources */,
 				83118E362506DFBF007D441F /* AppDelegate.m in Sources */,
