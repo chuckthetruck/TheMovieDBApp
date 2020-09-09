@@ -7,21 +7,40 @@
 //
 
 #import "ViewController.h"
+#import "MoviesModel.h"
 
 @interface ViewController ()
-
+@property (strong, nonatomic) UIImageView *posterImageView;
+@property (strong,nonatomic) MoviesModel* myMoviesModel;
 @end
 
 @implementation ViewController
 @synthesize overview = _overview;
 
+-(MoviesModel*)myMoviesModel{
+    
+    if(!_myMoviesModel)
+        _myMoviesModel =[MoviesModel sharedInstance];
+    
+    return _myMoviesModel;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.overview.text = self.labelText;
+    self.posterImageView.image = [[MoviesModel sharedInstance] getImageWithIndex:self.indexPath];
+    self.overview.text = self.myMoviesModel.movieData[self.indexPath.row][@"overview"];
     
 }
+
+/*-(UIImageView*)posterImageView{
+    
+    NSLog(@"HERE");
+    
+    if(!_posterImageView)
+        _posterImageView = [[UIImageView alloc] initWithImage: [self.myMoviesModel getImageWithIndex:_indexPath]];
+    return _posterImageView;
+}*/
 
 /*
 #pragma mark - Navigation

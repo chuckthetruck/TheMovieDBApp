@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(MoviesModel*)sharedInstance;
 
-//-(NSDictionary*)getMovieWithIndex:(NSNumber*)index;
+-(UIImage*) getImageWithIndex: (NSIndexPath*)indexPath;
 
 @property (strong,nonatomic) NSMutableArray *movieData;
 
