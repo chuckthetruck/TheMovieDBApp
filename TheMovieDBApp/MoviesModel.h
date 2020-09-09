@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(MoviesModel*)sharedInstance;
 
--(UIImage*) getImageWithIndex: (NSIndexPath*)indexPath;
+-(void*) getImageWithIndex: (NSIndexPath*)indexPath withView: (UIImageView*) tempView;
 
 @property (strong,nonatomic) NSMutableArray *movieData;
 

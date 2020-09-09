@@ -11,8 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *overview;
-@property (strong, nonatomic) NSString *labelText;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 @end
 
