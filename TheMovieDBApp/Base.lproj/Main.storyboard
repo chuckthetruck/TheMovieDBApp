@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Movies-->
         <scene sceneID="4P6-g9-zyi">
             <objects>
                 <tableViewController id="vYQ-sJ-IdZ" customClass="TableViewController" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="vYQ-sJ-IdZ" id="f5y-bC-7fU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Cpf-Ys-3Pa"/>
+                    <navigationItem key="navigationItem" title="Movies" id="Cpf-Ys-3Pa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEn-BL-bq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,9 +86,13 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-Or-CGO">
                                 <rect key="frame" x="20" y="88" width="240" height="359"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="6qF-r1-JJS"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ez9-Yc-Vxs" appends="YES" id="34e-gy-QWY"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="releaseValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rw6-pC-RU8">
                                 <rect key="frame" x="268" y="134" width="126" height="21"/>
@@ -183,8 +187,40 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDZ-kM-U51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ez9-Yc-Vxs">
+                    <connections>
+                        <action selector="prepareForSegue:sender:" destination="rkE-xb-xIl" id="5jX-k9-Ken"/>
+                        <segue destination="0pm-qk-L7E" kind="presentation" id="Nag-Le-mx8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="55.580357142857139"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="6DU-QB-kVs">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="0pm-qk-L7E" customClass="ModalViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dBA-Eg-qyk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83m-hr-wzq">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="x0H-5l-ak7"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="2yi-xa-fhw"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gB0-XJ-y7t"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="83m-hr-wzq" id="Rls-OD-qY9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrK-3x-SQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2386.9565217391305" y="55.580357142857139"/>
         </scene>
     </scenes>
 </document>

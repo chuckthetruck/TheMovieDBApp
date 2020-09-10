@@ -16,6 +16,7 @@
 		83118E512506DFC1007D441F /* TheMovieDBAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83118E502506DFC1007D441F /* TheMovieDBAppTests.m */; };
 		83118E5C2506DFC1007D441F /* TheMovieDBAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83118E5B2506DFC1007D441F /* TheMovieDBAppUITests.m */; };
 		8314067B25088BC900411A47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8314067A25088BC900411A47 /* ViewController.m */; };
+		8316A3BE2509D47F00E9F4FF /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8316A3BD2509D47F00E9F4FF /* ModalViewController.m */; };
 		831A2EE825083A1000B57154 /* MoviesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 831A2EE725083A1000B57154 /* MoviesModel.m */; };
 		831A2EEB250865C400B57154 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831A2EEA250865C400B57154 /* TableViewController.m */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,8 @@
 		83118E5D2506DFC1007D441F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8314067925088BC900411A47 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8314067A25088BC900411A47 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8316A3BC2509D47F00E9F4FF /* ModalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		8316A3BD2509D47F00E9F4FF /* ModalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		831A2EE625083A1000B57154 /* MoviesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesModel.h; sourceTree = "<group>"; };
 		831A2EE725083A1000B57154 /* MoviesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesModel.m; sourceTree = "<group>"; };
 		831A2EE9250865C400B57154 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -116,11 +119,13 @@
 				83118E382506DFBF007D441F /* SceneDelegate.m */,
 				831A2EE9250865C400B57154 /* TableViewController.h */,
 				831A2EEA250865C400B57154 /* TableViewController.m */,
+				8316A3BC2509D47F00E9F4FF /* ModalViewController.h */,
+				8316A3BD2509D47F00E9F4FF /* ModalViewController.m */,
+				8314067925088BC900411A47 /* ViewController.h */,
+				8314067A25088BC900411A47 /* ViewController.m */,
 				831A2EE625083A1000B57154 /* MoviesModel.h */,
 				831A2EE725083A1000B57154 /* MoviesModel.m */,
 				83118E3D2506DFBF007D441F /* Main.storyboard */,
-				8314067925088BC900411A47 /* ViewController.h */,
-				8314067A25088BC900411A47 /* ViewController.m */,
 				83118E402506DFC1007D441F /* Assets.xcassets */,
 				83118E422506DFC1007D441F /* LaunchScreen.storyboard */,
 				83118E452506DFC1007D441F /* Info.plist */,
@@ -279,6 +284,7 @@
 			files = (
 				8314067B25088BC900411A47 /* ViewController.m in Sources */,
 				831A2EEB250865C400B57154 /* TableViewController.m in Sources */,
+				8316A3BE2509D47F00E9F4FF /* ModalViewController.m in Sources */,
 				831A2EE825083A1000B57154 /* MoviesModel.m in Sources */,
 				83118E362506DFBF007D441F /* AppDelegate.m in Sources */,
 				83118E472506DFC1007D441F /* main.m in Sources */,

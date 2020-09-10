@@ -43,7 +43,7 @@
     
 }
 
--(void) getImageWithIndex: (NSIndexPath*) indexPath withView: (UIImageView*) tempView{
+- (void) getImageWithIndex: (NSIndexPath*) indexPath withView: (UIImageView*) tempView{
     
     NSString* imageURL = @"https://image.tmdb.org/t/p/w185";
     
@@ -58,6 +58,21 @@
     dispatch_async(dispatch_get_main_queue(),^{
         tempView.image = poster;
     });
+}
+
+- (UIImage*) getFullsizeImageWithIndex: (NSIndexPath*) indexPath withView: (UIImageView*) tempView{
+    
+    NSString* imageURL = @"https://image.tmdb.org/t/p/original";
+    
+    imageURL = [imageURL stringByAppendingString:_movieData[indexPath.row][@"poster_path"]];
+    
+    UIImage* poster = nil;
+    
+    NSData *posterImageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:imageURL]];
+    
+    poster = [UIImage imageWithData:posterImageData];
+    
+    return poster;
 }
 
 @end
