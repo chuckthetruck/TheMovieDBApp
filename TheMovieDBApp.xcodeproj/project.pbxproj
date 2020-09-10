@@ -19,6 +19,8 @@
 		8316A3BE2509D47F00E9F4FF /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8316A3BD2509D47F00E9F4FF /* ModalViewController.m */; };
 		831A2EE825083A1000B57154 /* MoviesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 831A2EE725083A1000B57154 /* MoviesModel.m */; };
 		831A2EEB250865C400B57154 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831A2EEA250865C400B57154 /* TableViewController.m */; };
+		83BFEC87250ACBBE00C61E98 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BFEC86250ACBBE00C61E98 /* CollectionViewController.m */; };
+		83BFEC8A250ACEB300C61E98 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BFEC89250ACEB300C61E98 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		831A2EE725083A1000B57154 /* MoviesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesModel.m; sourceTree = "<group>"; };
 		831A2EE9250865C400B57154 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		831A2EEA250865C400B57154 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		83BFEC85250ACBBE00C61E98 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		83BFEC86250ACBBE00C61E98 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		83BFEC88250ACEB300C61E98 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		83BFEC89250ACEB300C61E98 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +125,14 @@
 				83118E382506DFBF007D441F /* SceneDelegate.m */,
 				831A2EE9250865C400B57154 /* TableViewController.h */,
 				831A2EEA250865C400B57154 /* TableViewController.m */,
-				8316A3BC2509D47F00E9F4FF /* ModalViewController.h */,
-				8316A3BD2509D47F00E9F4FF /* ModalViewController.m */,
 				8314067925088BC900411A47 /* ViewController.h */,
 				8314067A25088BC900411A47 /* ViewController.m */,
+				83BFEC85250ACBBE00C61E98 /* CollectionViewController.h */,
+				83BFEC86250ACBBE00C61E98 /* CollectionViewController.m */,
+				83BFEC88250ACEB300C61E98 /* CollectionViewCell.h */,
+				83BFEC89250ACEB300C61E98 /* CollectionViewCell.m */,
+				8316A3BC2509D47F00E9F4FF /* ModalViewController.h */,
+				8316A3BD2509D47F00E9F4FF /* ModalViewController.m */,
 				831A2EE625083A1000B57154 /* MoviesModel.h */,
 				831A2EE725083A1000B57154 /* MoviesModel.m */,
 				83118E3D2506DFBF007D441F /* Main.storyboard */,
@@ -282,8 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BFEC87250ACBBE00C61E98 /* CollectionViewController.m in Sources */,
 				8314067B25088BC900411A47 /* ViewController.m in Sources */,
 				831A2EEB250865C400B57154 /* TableViewController.m in Sources */,
+				83BFEC8A250ACEB300C61E98 /* CollectionViewCell.m in Sources */,
 				8316A3BE2509D47F00E9F4FF /* ModalViewController.m in Sources */,
 				831A2EE825083A1000B57154 /* MoviesModel.m in Sources */,
 				83118E362506DFBF007D441F /* AppDelegate.m in Sources */,

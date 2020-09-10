@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "MoviesModel.h"
 #import "ViewController.h"
+#import "CollectionViewController.h"
 
 @interface TableViewController ()
 @property (strong,nonatomic) MoviesModel* myMoviesModel;
@@ -35,21 +36,38 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(section == 0){
+        return self.myMoviesModel.movieData.count;
+    }
     
-    return self.myMoviesModel.movieData.count;
+    else{
+        return 1;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieNameCell" forIndexPath:indexPath];
+    UITableViewCell *cell = nil;
     
-    // Configure the cell...
-    cell.textLabel.text = self.myMoviesModel.movieData[indexPath.row][@"title"];
+    if(indexPath.section==0){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"MovieNameCell" forIndexPath:indexPath];
+    
+        // Configure the cell...
+        cell.textLabel.text = self.myMoviesModel.movieData[indexPath.row][@"title"];
+    }
+    else{
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionCell" forIndexPath:indexPath];
+        
+        // Configure the cell...
+        cell.textLabel.text = @"Poster Collection";
+    }
+    
+    
     
     return cell;
 }
@@ -58,12 +76,12 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     BOOL isVC = [[segue destinationViewController] isKindOfClass:[ViewController class]];
-
     if(isVC){
         UITableViewCell* cell = (UITableViewCell*)sender;
         ViewController *vc = [segue destinationViewController];
         vc.indexPath = [self.tableView indexPathForCell: cell];
     }
+    
     
 }
 

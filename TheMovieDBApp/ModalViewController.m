@@ -29,15 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
     _imageView = [[UIImageView alloc] initWithImage:[self.myMoviesModel getFullsizeImageWithIndex:self.indexPath withView: self.imageView]];
     
     [self.scrollView addSubview:self.imageView];
-    
-    
-    self.scrollView.contentSize = self.imageView.image.size;
-    self.scrollView.minimumZoomScale = 0.1;
+    self.scrollView.contentSize = self.imageView.frame.size;
+    self.scrollView.minimumZoomScale = .1;
     self.scrollView.delegate = self;
+    
+    self.scrollView.zoomScale = .2;
     
 }
 
@@ -51,6 +50,11 @@
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.imageView;
+}
+- (IBAction)dismissButton:(UIButton *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 /*
