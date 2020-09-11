@@ -13,6 +13,8 @@
 
 @interface TableViewController ()
 @property (strong,nonatomic) MoviesModel* myMoviesModel;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (strong,nonatomic) NSArray *pickerData;
 @end
 
 @implementation TableViewController
@@ -29,6 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _pickerData = @[@"See the Button Text Change",@"Wow again?",@"Third Times The Charm",@"Pressing This will go to the Timer view too"];
+    
+    self.pickerView.dataSource = self;
+    self.pickerView.delegate = self;
     
 }
 
@@ -94,6 +101,28 @@
         vc.indexPath = [self.tableView indexPathForCell: cell];
     }
     
+    
+}
+
+- (void)didReceiveMemoryWarning{
+    [super didReceiveMemoryWarning];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    return _pickerData.count;
+    
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    NSLog(@"%@",_pickerData[row]);
+    
+    return _pickerData[row];
     
 }
 

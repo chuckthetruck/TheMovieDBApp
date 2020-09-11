@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MoreViewController : ViewController
+@interface MoreViewController : ViewController <UIPickerViewDataSource,UIPickerViewDelegate>
 
 @end
 
