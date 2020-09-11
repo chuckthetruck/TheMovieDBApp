@@ -18,6 +18,8 @@
 @property (strong,nonatomic) NSArray *pickerData;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (nonatomic) int labelInt;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentExample;
+@property (weak, nonatomic) IBOutlet UILabel *segmentLabel;
 @end
 
 @implementation MoreViewController
@@ -62,6 +64,7 @@
         self.view.backgroundColor = [UIColor whiteColor];
         self.timeTime.textColor = [UIColor blackColor];
         self.timerLabel.textColor = [UIColor blackColor];
+        self.segmentLabel.textColor = [UIColor blackColor];
         self.timeTime.text = @"Daytime";
         
     }
@@ -70,14 +73,30 @@
         self.view.backgroundColor = [UIColor blackColor];
         self.timeTime.textColor = [UIColor whiteColor];
         self.timerLabel.textColor = [UIColor whiteColor];
+        self.segmentLabel.textColor = [UIColor whiteColor];
         self.timeTime.text = @"Nighttime";
     }
 }
 
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
-}
 
+- (IBAction)segementChanged:(UISegmentedControl *)sender {
+    
+    switch(sender.selectedSegmentIndex){
+    case 0:
+        _segmentLabel.text = @"First Selected";
+        break;
+        
+    case 1:
+        _segmentLabel.text = @"Second Selected";
+        break;
+        
+    default:
+        _segmentLabel.text = @"None Selected";
+        break;
+            
+    }
+    
+}
 
 /*
 #pragma mark - Navigation

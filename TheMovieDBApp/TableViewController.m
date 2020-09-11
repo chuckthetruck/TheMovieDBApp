@@ -93,15 +93,12 @@
             break;
         
         case 1:
-            
-            NSLog(@"HERE");
             cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionCell" forIndexPath:indexPath];
             // Configure the cell...
             cell.textLabel.text = @"Poster Collection";
             break;
             
         default:
-            NSLog(@"Spicy HERE");
             cell = [tableView dequeueReusableCellWithIdentifier:@"MoreCell" forIndexPath:indexPath];
             // Configure the cell...
             cell.textLabel.text = @"More Examples";

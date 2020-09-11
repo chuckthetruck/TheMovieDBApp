@@ -163,7 +163,10 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daytime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-yW-iHZ">
-                                <rect key="frame" x="82" y="215" width="63" height="20.5"/>
+                                <rect key="frame" x="82" y="215" width="136" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="HgX-yb-oh4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -175,7 +178,7 @@
                                     <segment title="Second"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentTapped:" destination="lXi-60-1Qd" eventType="valueChanged" id="KOF-aR-9MX"/>
+                                    <action selector="segementChanged:" destination="lXi-60-1Qd" eventType="valueChanged" id="9SP-aH-rtl"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have been on this view for 0 seconds" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9u-AV-0q1">
@@ -184,17 +187,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgS-kc-F6G">
+                                <rect key="frame" x="25" y="293" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dGF-yW-iHZ" firstAttribute="top" secondItem="pAA-6K-iQx" secondAttribute="bottom" constant="21" id="10x-oS-yyL"/>
+                            <constraint firstItem="njp-52-a0I" firstAttribute="top" secondItem="dGF-yW-iHZ" secondAttribute="bottom" constant="18" id="0Wa-i4-UV2"/>
                             <constraint firstItem="EHN-4t-z4C" firstAttribute="leading" secondItem="yTl-5G-NI0" secondAttribute="leading" constant="25" id="3xu-XK-U20"/>
-                            <constraint firstItem="dGF-yW-iHZ" firstAttribute="leading" secondItem="LoY-wO-0ux" secondAttribute="trailing" constant="8" id="7Om-5O-Ggf"/>
                             <constraint firstItem="yTl-5G-NI0" firstAttribute="trailing" secondItem="a9u-AV-0q1" secondAttribute="trailing" constant="20" id="Efe-QO-lua"/>
                             <constraint firstItem="yTl-5G-NI0" firstAttribute="trailing" secondItem="tlh-mJ-7Xl" secondAttribute="trailing" constant="5" id="FYf-VP-F8A"/>
                             <constraint firstItem="pAA-6K-iQx" firstAttribute="top" secondItem="EHN-4t-z4C" secondAttribute="bottom" constant="8" id="HCU-Ih-P7s"/>
-                            <constraint firstItem="71m-VR-6At" firstAttribute="leading" secondItem="dGF-yW-iHZ" secondAttribute="trailing" constant="170" id="NEa-GM-f8j"/>
-                            <constraint firstItem="dGF-yW-iHZ" firstAttribute="leading" secondItem="LoY-wO-0ux" secondAttribute="trailing" constant="8" id="NGg-jx-VAd"/>
                             <constraint firstItem="a9u-AV-0q1" firstAttribute="leading" secondItem="njp-52-a0I" secondAttribute="trailing" constant="8" id="NKG-zg-vxd"/>
                             <constraint firstItem="Dv1-Ty-XAz" firstAttribute="top" secondItem="yTl-5G-NI0" secondAttribute="top" id="PWj-Wl-6Zx"/>
                             <constraint firstItem="71m-VR-6At" firstAttribute="top" secondItem="yTl-5G-NI0" secondAttribute="top" id="REX-EV-gXN"/>
@@ -204,10 +210,14 @@
                             <constraint firstItem="yTl-5G-NI0" firstAttribute="trailing" secondItem="71m-VR-6At" secondAttribute="trailing" constant="20" id="WUW-oI-zlV"/>
                             <constraint firstItem="EHN-4t-z4C" firstAttribute="top" secondItem="Dv1-Ty-XAz" secondAttribute="bottom" constant="8" id="XWo-Qp-1CE"/>
                             <constraint firstItem="LoY-wO-0ux" firstAttribute="leading" secondItem="yTl-5G-NI0" secondAttribute="leading" constant="25" id="YsS-Ig-WZL"/>
+                            <constraint firstItem="dGF-yW-iHZ" firstAttribute="top" secondItem="pAA-6K-iQx" secondAttribute="bottom" constant="21" id="aB0-a0-ohv"/>
+                            <constraint firstItem="a9u-AV-0q1" firstAttribute="leading" secondItem="lgS-kc-F6G" secondAttribute="trailing" constant="8" id="bEO-IJ-Tdj"/>
                             <constraint firstItem="njp-52-a0I" firstAttribute="leading" secondItem="yTl-5G-NI0" secondAttribute="leading" constant="25" id="bYB-fG-dx4"/>
                             <constraint firstItem="a9u-AV-0q1" firstAttribute="top" secondItem="71m-VR-6At" secondAttribute="bottom" constant="8" id="bfS-iB-nWS"/>
                             <constraint firstItem="pAA-6K-iQx" firstAttribute="leading" secondItem="yTl-5G-NI0" secondAttribute="leading" constant="25" id="did-tw-qPY"/>
-                            <constraint firstItem="dGF-yW-iHZ" firstAttribute="top" secondItem="pAA-6K-iQx" secondAttribute="bottom" constant="21" id="l3G-7C-ZIt"/>
+                            <constraint firstItem="lgS-kc-F6G" firstAttribute="top" secondItem="njp-52-a0I" secondAttribute="bottom" constant="8" id="dpe-bM-h6Z"/>
+                            <constraint firstItem="dGF-yW-iHZ" firstAttribute="leading" secondItem="LoY-wO-0ux" secondAttribute="trailing" constant="8" id="gvf-Z7-Cu1"/>
+                            <constraint firstItem="lgS-kc-F6G" firstAttribute="leading" secondItem="yTl-5G-NI0" secondAttribute="leading" constant="25" id="m5j-8x-SXp"/>
                             <constraint firstItem="tlh-mJ-7Xl" firstAttribute="top" secondItem="yTl-5G-NI0" secondAttribute="top" constant="126" id="puB-kO-6Mw"/>
                             <constraint firstItem="yTl-5G-NI0" firstAttribute="trailing" secondItem="njp-52-a0I" secondAttribute="trailing" constant="269" id="rsk-aD-hMh"/>
                             <constraint firstItem="71m-VR-6At" firstAttribute="leading" secondItem="Dv1-Ty-XAz" secondAttribute="trailing" constant="11" id="vXD-XR-w7F"/>
@@ -222,6 +232,8 @@
                         <outlet property="greenSlider" destination="EHN-4t-z4C" id="Lo4-Xl-Q4w"/>
                         <outlet property="numberLabel" destination="71m-VR-6At" id="VK7-ht-t02"/>
                         <outlet property="redSlider" destination="Dv1-Ty-XAz" id="klv-xX-gDJ"/>
+                        <outlet property="segmentExample" destination="njp-52-a0I" id="TY7-km-qqW"/>
+                        <outlet property="segmentLabel" destination="lgS-kc-F6G" id="6lZ-9X-1j8"/>
                         <outlet property="stepper" destination="tlh-mJ-7Xl" id="iRq-2T-nrz"/>
                         <outlet property="timeTime" destination="dGF-yW-iHZ" id="bmY-8i-gE7"/>
                         <outlet property="timerLabel" destination="a9u-AV-0q1" id="Riw-gy-csb"/>
