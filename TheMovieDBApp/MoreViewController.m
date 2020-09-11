@@ -15,23 +15,30 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeTime;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
-@property (weak, nonatomic) IBOutlet UIButton *buttonExample;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong,nonatomic) NSArray *pickerData;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (nonatomic) int labelInt;
 @end
 
 @implementation MoreViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.numberLabel.textColor = [UIColor colorWithRed:self.redSlider.value/255.0 green:self.greenSlider.value/255.0 blue:self.blueSlider.value/255.0 alpha:1];
     self.stepper.backgroundColor = [UIColor lightGrayColor];
-    _pickerData = @[@"See the Button Text Change",@"Wow again?",@"Third Times The Charm",@"Pressing This will go to the Timer view too"];
     
-    self.pickerView.dataSource = self;
-    self.pickerView.delegate = self;
+    self.labelInt = 0;
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimerLabel) userInfo:nil repeats:YES];
 }
+
+- (void) updateTimerLabel{
+    self.labelInt ++;
+    
+    self.timerLabel.text = [NSString stringWithFormat:@"You have been on this view for %d seconds",self.labelInt];
+    
+}
+
 
 - (IBAction)sliderUpdate:(id)sender {
     self.numberLabel.textColor = [UIColor colorWithRed:self.redSlider.value/255.0 green:self.greenSlider.value/255.0 blue:self.blueSlider.value/255.0 alpha:1];
@@ -45,24 +52,6 @@
     
 }
 
-- (IBAction)segmentTapped:(UISegmentedControl *)sender {
-    
-    NSInteger sIndex = [sender selectedSegmentIndex];
-    
-    switch (sIndex){
-        case 0:
-            self.buttonExample.tintColor = [UIColor orangeColor];
-            break;
-            
-        case 1:
-            self.buttonExample.tintColor = [UIColor purpleColor];
-            break;
-        
-        default:
-            self.buttonExample.tintColor = [UIColor blueColor];
-            break;
-    }
-}
 
 //Issues an invalid mode warning, the internet tells me just to ignore it so...
 - (IBAction)switchFlicked:(UISwitch *)sender {
@@ -72,36 +61,21 @@
     if([S isOn]){
         self.view.backgroundColor = [UIColor whiteColor];
         self.timeTime.textColor = [UIColor blackColor];
+        self.timerLabel.textColor = [UIColor blackColor];
         self.timeTime.text = @"Daytime";
+        
     }
     
     else{
         self.view.backgroundColor = [UIColor blackColor];
         self.timeTime.textColor = [UIColor whiteColor];
+        self.timerLabel.textColor = [UIColor whiteColor];
         self.timeTime.text = @"Nighttime";
     }
 }
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
-    return _pickerData.count;
-    
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    [self.buttonExample setTitle:_pickerData[row] forState:UIControlStateNormal];
-    
-    return _pickerData[row];
-    
 }
 
 

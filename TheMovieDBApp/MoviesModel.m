@@ -10,6 +10,9 @@
 
 @implementation MoviesModel
 @synthesize movieData = _movieData;
+@synthesize apiCalls = _apiCalls;
+
+
 
 +(MoviesModel*)sharedInstance{
     
@@ -41,6 +44,19 @@
     
     return _movieData;
     
+}
+
+
+- (void) changeMoviesData: (NSString*) fromString{
+    
+    NSLog(@"%@",fromString);
+    NSError *error;
+    NSString *urlString = [NSString stringWithFormat:fromString];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+    
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    self.movieData = [json valueForKey:@"results"];
 }
 
 - (void) getImageWithIndex: (NSIndexPath*) indexPath withView: (UIImageView*) tempView{

@@ -13,8 +13,10 @@
 
 @interface TableViewController ()
 @property (strong,nonatomic) MoviesModel* myMoviesModel;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (strong, nonatomic) UIPickerView *pickerView;
 @property (strong,nonatomic) NSArray *pickerData;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (strong,nonatomic) NSArray* apiCalls;
 @end
 
 @implementation TableViewController
@@ -29,14 +31,34 @@
 }
 
 
+-(NSArray*) apiCalls  {
+    if(!_apiCalls){
+        self.apiCalls =  @[@"https://api.themoviedb.org/3/movie/now_playing?api_key=a162de9ef2506e96acd6fe602ba16c43",
+                           @"https://api.themoviedb.org/3/discover/movie?api_key=a162de9ef2506e96acd6fe602ba16c43&sort_by=popularity.desc&vote_count.gte=100",
+                           @"https://api.themoviedb.org/3/discover/movie?api_key=a162de9ef2506e96acd6fe602ba16c43&sort_by=rating.desc&vote_count.gte=400",
+                           @"https://api.themoviedb.org/3/discover/movie?api_key=a162de9ef2506e96acd6fe602ba16c43&sort_by=vote_average.desc&vote_count.gte=400",
+                            ];
+    }
+    
+    return _apiCalls;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pickerData = @[@"See the Button Text Change",@"Wow again?",@"Third Times The Charm",@"Pressing This will go to the Timer view too"];
+    _pickerData = @[@"Now Playing",@"Popularity",@"Rating",@"User Score"];
     
+    self.pickerView = [[UIPickerView alloc] init];
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
     
+    self.textField.inputView = _pickerView;
+    
+    [self.pickerView selectRow:0 inComponent:0 animated:YES];
+    
+    self.textField.text = _pickerData[0];
+
 }
 
 #pragma mark - Table view data source
@@ -120,9 +142,20 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
-    NSLog(@"%@",_pickerData[row]);
+    
     
     return _pickerData[row];
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    [self.myMoviesModel changeMoviesData:self.apiCalls[row]];
+    self.textField.text = self.pickerData[row];
+    [self.textField resignFirstResponder];
+    
+    [self.tableView reloadData];
+    
     
 }
 
@@ -170,4 +203,6 @@
 }
 */
 
-@end
+    @end
+    
+    

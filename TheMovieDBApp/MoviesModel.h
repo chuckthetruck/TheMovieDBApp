@@ -17,9 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getImageWithIndex: (NSIndexPath*)indexPath withView: (UIImageView*) tempView;
 - (UIImage*) getFullsizeImageWithIndex: (NSIndexPath*) indexPath withView: (UIImageView*) tempView;
+- (void) changeMoviesData: (NSString*) fromString;
 
 @property (strong,nonatomic) NSMutableArray *movieData;
-
+@property (strong,nonatomic) NSDictionary *apiCalls;
 @end
 
 NS_ASSUME_NONNULL_END
