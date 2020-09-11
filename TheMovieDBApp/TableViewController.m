@@ -36,7 +36,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -44,9 +44,11 @@
         return self.myMoviesModel.movieData.count;
     }
     
-    else{
+    else if (section == 1){
         return 1;
     }
+    
+    return 1;
 }
 
 
@@ -54,17 +56,27 @@
     
     UITableViewCell *cell = nil;
     
-    if(indexPath.section==0){
-        cell = [tableView dequeueReusableCellWithIdentifier:@"MovieNameCell" forIndexPath:indexPath];
-    
-        // Configure the cell...
-        cell.textLabel.text = self.myMoviesModel.movieData[indexPath.row][@"title"];
-    }
-    else{
-        cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionCell" forIndexPath:indexPath];
+    switch (indexPath.section) {
+        case 0:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"MovieNameCell" forIndexPath:indexPath];
+            // Configure the cell...
+            cell.textLabel.text = self.myMoviesModel.movieData[indexPath.row][@"title"];
+            break;
         
-        // Configure the cell...
-        cell.textLabel.text = @"Poster Collection";
+        case 1:
+            
+            NSLog(@"HERE");
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionCell" forIndexPath:indexPath];
+            // Configure the cell...
+            cell.textLabel.text = @"Poster Collection";
+            break;
+            
+        default:
+            NSLog(@"Spicy HERE");
+            cell = [tableView dequeueReusableCellWithIdentifier:@"MoreCell" forIndexPath:indexPath];
+            // Configure the cell...
+            cell.textLabel.text = @"More Examples";
+            break;
     }
     
     
